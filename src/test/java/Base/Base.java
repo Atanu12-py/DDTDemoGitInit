@@ -13,6 +13,7 @@ public class Base {
     public Properties properties;
     WebDriver driver;
 
+    //this is sample comment
     public WebDriver openBrowser(String browserName){
         properties = new Properties();
         File file = new File("src\\test\\resources\\config.properties");
