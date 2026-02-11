@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class Base {
     public Properties properties;
-    WebDriver driver;
+    public WebDriver driver;
 
     //this is sample comment
     public WebDriver openBrowser(String browserName){
@@ -60,5 +60,17 @@ public class Base {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    public String takeScreenshot(String name, WebDriver driver) {
+        String path = System.getProperty("user.dir") + "\\screenshots\\" + name + ".png";
+        try {
+            File source = ((org.openqa.selenium.TakesScreenshot) driver).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+            File destination = new File(path);
+            org.apache.commons.io.FileUtils.copyFile(source, destination);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return path;
     }
 }
