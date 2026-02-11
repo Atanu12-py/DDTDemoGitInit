@@ -14,7 +14,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        System.out.println("This is sample comment");
+        System.out.println("This is sample comment for conflict");
     }
 
     @FindBy(id = "input-email")
